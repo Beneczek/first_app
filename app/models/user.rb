@@ -13,7 +13,7 @@
 class User < ActiveRecord::Base
 	attr_accessible :name, :email
 	has_many :microposts
-	email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+	email_regex = /\A[\w+\-.]+@p\.lodz\.pl/i
 
   	validates :email, :presence   => true,
                     :format     => { :with => email_regex },
