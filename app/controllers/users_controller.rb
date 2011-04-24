@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
+  before_filter :my_title
+
+  def my_title
+    @title = "Users test"
+  end 
+
   def index
     @users = User.all
 
