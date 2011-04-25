@@ -1,10 +1,16 @@
 FirstApp::Application.routes.draw do
-  resources :microposts
+  get "sessions/new"
 
+  resources :microposts
   resources :users
+
+  
 
   get "users/new"
   match '/signup',  :to => 'users#new'
+  match '/signin', :to =>'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
+
 
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
